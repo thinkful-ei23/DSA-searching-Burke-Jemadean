@@ -27,7 +27,7 @@ class App extends Component {
     const item = array[index];
   
     if (item === parseInt(value, 10)) {
-      this.setState({data: this.state.data, count});
+      this.setState({count});
       return index;
     }
     else if (item < value) { // if item is less than value, then we know it's in the second half of the array
@@ -44,7 +44,7 @@ indexOf(array, value) {
   for (let i=0; i<array.length; i++) {
     count++;
     if (array[i] === parseInt(value, 10)) {
-      this.setState({data: this.state.data, count});
+      this.setState({count});
       return i;
     }
   }
@@ -52,7 +52,7 @@ indexOf(array, value) {
 }
 
 clearValues() {
-  this.setState({data: this.state.data, count: 0, error: null});
+  this.setState({count: 0, error: null});
 }
 
 callIndexOf(array, value) {
