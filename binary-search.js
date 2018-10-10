@@ -22,3 +22,8 @@ function binarySearch(array, value, start, end) {
     return binarySearch(array, value, start, index - 1);
   }
 }
+
+function makeArray(string) {
+  const newArray = string.split(' ').map(element => parseInt(element, 10)).sort((a,b) => a - b).join(', ');
+  console.log(newArray);
+}
