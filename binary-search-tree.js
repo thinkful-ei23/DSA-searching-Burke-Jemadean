@@ -85,6 +85,63 @@ class BinarySearchTree {
 
 function main() {
   const bst = new BinarySearchTree();
+  bst.insert(25);
+  bst.insert(15);
+  bst.insert(50);
+  bst.insert(10);
+  bst.insert(24);
+  bst.insert(35);
+  bst.insert(70);
+  bst.insert(4);
+  bst.insert(12);
+  bst.insert(18);
+  bst.insert(31);
+  bst.insert(44);
+  bst.insert(66);
+  bst.insert(90);
+  bst.insert(22);
+
+  function preOrder(binarySearchTree) {
+    //process node
+    //recursively step left
+    //recursively step right
+    console.log(binarySearchTree.key);
+    if (binarySearchTree.left) {
+      preOrder(binarySearchTree.left);
+    }
+    if (binarySearchTree.right) {
+      preOrder(binarySearchTree.right);
+    }
+  }
+
+  function inOrder(binarySearchTree) {
+    //recursively step left
+    //process node    
+    //recursively step right
+    if (binarySearchTree.left) {
+      inOrder(binarySearchTree.left);
+    }
+    console.log(binarySearchTree.key);
+    if (binarySearchTree.right) {
+      inOrder(binarySearchTree.right);
+    }
+  }
+
+  function postOrder(binarySearchTree) {
+    //recursively step left  
+    //recursively step right
+    //process node
+    if (binarySearchTree.left) {
+      postOrder(binarySearchTree.left);
+    }
+    if (binarySearchTree.right) {
+      postOrder(binarySearchTree.right);
+    }
+    console.log(binarySearchTree.key);
+  }
+
+
+  postOrder(bst);
 
 }
 
