@@ -7,12 +7,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     // this.textInput = React.createRef();
-    this.state = {data: [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40, 48, 32, 26, 2, 14, 33, 45, 72, 56, 44, 21, 88, 27, 68, 15, 62, 93, 98, 73, 28, 16, 46, 87, 28, 65, 38, 67, 16, 85, 63, 23, 69, 64, 91, 9, 70, 81, 27, 97, 82, 6, 88, 3, 7, 46, 13, 11, 64, 76, 31, 26, 38, 28, 13, 17, 69, 90, 1, 6, 7, 64, 43, 9, 73, 80, 98, 46, 27, 22, 87, 49, 83, 6, 39, 42, 51, 54, 84, 34, 53, 78, 40, 14, 5]}
+    this.state = {
+      data: [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40, 48, 32, 26, 2, 14, 33, 45, 72, 56, 44, 21, 88, 27, 68, 15, 62, 93, 98, 73, 28, 16, 46, 87, 28, 65, 38, 67, 16, 85, 63, 23, 69, 64, 91, 9, 70, 81, 27, 97, 82, 6, 88, 3, 7, 46, 13, 11, 64, 76, 31, 26, 38, 28, 13, 17, 69, 90, 1, 6, 7, 64, 43, 9, 73, 80, 98, 46, 27, 22, 87, 49, 83, 6, 39, 42, 51, 54, 84, 34, 53, 78, 40, 14, 5],
+      count: 0}
   }
 
   binarySearch(array, value, start, end) {
     start = start === undefined ? 0 : start;
     end = end === undefined ? array.length : end;
+    this.setState({data: this.state.data, count: this.state.count + 1});
   
     // we haven't found the item past our end condition, return -1
     if (start > end) {
@@ -37,6 +40,7 @@ class App extends Component {
   
 indexOf(array, value) {
   for (let i=0; i<array.length; i++) {
+    this.setState({data: this.state.data, count: this.state.count + 1});
     if (array[i] === value) {
       return i;
     }
@@ -46,15 +50,22 @@ indexOf(array, value) {
 
 callIndexOf(array, value) {
   console.log('in call index of');
+  this.setState({data: this.state.data, count: 0});
   this.indexOf(array, value);
+  let found = this.index
   this.textInput.value = '';
 }
 
 callBinarySearch(array, value) {
   console.log('in binary search');
+  this.setState({data: this.state.data, count: 0});
   this.binarySearch(array, value);
   this.textInput.value = '';
 }
+
+//For both buttons
+//have counter that counts how many steps
+//Return either the number or not found
 
   render() {
     return (
