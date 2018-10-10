@@ -61,13 +61,11 @@ callIndexOf(array, value) {
   if (found === -1) {
     this.setState({error: 'Your value is not in the array'});
   }
-  console.log(this.state);
   this.textInput.value = '';
 }
 
 callBinarySearch(array, value) {
   this.clearValues();
-  console.log('in binary search');
   const found = this.binarySearch(array, value);
   if (found === -1) {
     this.setState({error: 'Value not in array'});
