@@ -84,6 +84,9 @@ class BinarySearchTree {
 }
 
 function printPreOrder(BST) {
+  //process node
+  //recursively step left
+  //recursively step right
   console.log(BST.key);
   if (BST.left) {
     printPreOrder(BST.left);
@@ -94,6 +97,9 @@ function printPreOrder(BST) {
 }
 
 function printInOrder(BST) {
+  //recursively step left
+  //process node    
+  //recursively step right
   if (BST.left) {
     printInOrder(BST.left);
   }
@@ -104,6 +110,9 @@ function printInOrder(BST) {
 }
 
 function printPostOrder(BST) {
+  //recursively step left  
+  //recursively step right
+  //process node
   if (BST.left) {
     printPostOrder(BST.left);
   }
