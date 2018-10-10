@@ -83,9 +83,43 @@ class BinarySearchTree {
   }
 }
 
+function printPreOrder(BST) {
+  console.log(BST.key);
+  if (BST.left) {
+    printPreOrder(BST.left);
+  }
+  if (BST.right) {
+    printPreOrder(BST.right);
+  }
+}
+
+function printInOrder(BST) {
+  if (BST.left) {
+    printInOrder(BST.left);
+  }
+  console.log(BST.key);
+  if (BST.right) {
+    printInOrder(BST.right);
+  }
+}
+
+function printPostOrder(BST) {
+  if (BST.left) {
+    printPostOrder(BST.left);
+  }
+  if (BST.right) {
+    printPostOrder(BST.right);
+  }
+  console.log(BST.key);
+}
+
 function main() {
   const bst = new BinarySearchTree();
-
+  const data = [25, 15, 50, 10, 24, 35, 70, 4, 12, 18, 31, 44, 66, 90, 22];
+  for (let i = 0; i < data.length; i++) {
+    bst.insert(data[i]);
+  }
+  printInOrder(bst);
 }
 
 main();

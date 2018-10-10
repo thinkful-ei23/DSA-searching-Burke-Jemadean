@@ -27,3 +27,36 @@
 // when we reach a number that isn't that dewey decimal
 // if it's not there,
 // return an error
+
+
+// max profit : Max profit
+// The share price for a company over a week's trading is as follows: 
+// [128, 97, 121, 123, 98, 97, 105]. If you had to buy shares in the company on one day, 
+// and sell the shares on one of the following days, write an algorithm to work out what the maximum profit you could make would be.
+
+// need to find the min first
+// what if there are multiple minimums?
+
+// need to find the max (after the min)
+// what if there are multiple maximums?
+// return the difference
+
+// nested for loops ? not good
+// 
+// 
+
+function maxProfit (array) {
+  const length = array.length;
+  let max = array[length-1];
+  let profit = 0;
+  for (let i = length - 2; i >= 0; i--) { // starting from the second to last
+    if (array[i] > max) max = array[i];
+    if (max - array[i] > profit) profit = (max - array[i]);
+  }
+  return profit;
+  // input array
+  // output max Profit
+}
+
+console.log(maxProfit([128, 97, 100, 123, 98, 97, 105, 5, 35]));
+// 123,
